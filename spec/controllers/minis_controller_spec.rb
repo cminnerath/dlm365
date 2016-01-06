@@ -110,6 +110,8 @@ RSpec.describe MinisController, type: :controller do
         mini = Mini.create! valid_attributes
         put :update, {:id => mini.to_param, :mini => new_attributes}, valid_session
         mini.reload
+        expect(mini.film_title).to eq('Musical Goats')
+        expect(mini.imdb_id).to eq('A659283666')
       end
 
       it "assigns the requested mini as @mini" do
