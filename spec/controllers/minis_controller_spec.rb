@@ -24,11 +24,11 @@ RSpec.describe MinisController, type: :controller do
   # Mini. As you add validations to Mini, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { film_title: 'Camp Pirate', imdb_id: 'A659283498', rating: '3.5', }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { film_title: nil, imdb_id: nil, rating: 'Acid', }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,14 +103,13 @@ RSpec.describe MinisController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { film_title: 'Musical Goats', imdb_id: 'A659283666', rating: '1', }
       }
 
       it "updates the requested mini" do
         mini = Mini.create! valid_attributes
         put :update, {:id => mini.to_param, :mini => new_attributes}, valid_session
         mini.reload
-        skip("Add assertions for updated state")
       end
 
       it "assigns the requested mini as @mini" do
