@@ -24,6 +24,7 @@ class MinisController < ApplicationController
   # POST /minis
   # POST /minis.json
   def create
+    # require pry; binding.pry
     @mini = Mini.new(mini_params)
 
     respond_to do |format|
@@ -69,6 +70,6 @@ class MinisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mini_params
-      params.require(:mini).permit(:film_title, :imdb_id, :rating)
+      params.require(:mini).permit(:film_title, :imdb_id, :rating, :date_viewed)
     end
 end

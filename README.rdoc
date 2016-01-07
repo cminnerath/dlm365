@@ -1,1 +1,2 @@
+https://travis-ci.org/cminnerath/dlm365.svg
 DLM365!
