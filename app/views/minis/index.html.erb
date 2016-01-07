@@ -16,6 +16,7 @@
     <% @minis.each do |mini| %>
       <tr>
         <td><%= mini.film_title %></td>
+        <td><%= mini.date_viewed %></td>
         <td><%= mini.imdb_id %></td>
         <td><%= mini.rating %></td>
         <td><%= link_to 'Show', mini %></td>

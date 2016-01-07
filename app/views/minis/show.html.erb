@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Rating:</strong>
+  <%= @mini.date_viewed %>
+</p>
+
+<p>
   <strong>Imdb:</strong>
   <%= @mini.imdb_id %>
 </p>
@@ -14,6 +19,7 @@
   <strong>Rating:</strong>
   <%= @mini.rating %>
 </p>
+
 
 <%= link_to 'Edit', edit_mini_path(@mini) %> |
 <%= link_to 'Back', minis_path %>
