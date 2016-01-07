@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'materialize-sass'
 gem 'rails_12factor'
 gem 'validates_timeliness', '~> 4.0'
+gem 'jeweler'
+gem 'httparty', '=0.8.2'
+gem 'imdb_party'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
