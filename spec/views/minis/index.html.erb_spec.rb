@@ -6,12 +6,14 @@ RSpec.describe "minis/index", type: :view do
       Mini.create!(
         :film_title => "Film Title",
         :imdb_id => "Imdb",
-        :rating => 1
+        :rating => 1,
+        :date_viewed => '10-10-2015'
       ),
       Mini.create!(
         :film_title => "Film Title",
         :imdb_id => "Imdb",
-        :rating => 1
+        :rating => 1,
+        :date_viewed => '10-10-2015'
       )
     ])
   end

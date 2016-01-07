@@ -12,12 +12,17 @@ RSpec.describe Mini, :type => :model do
   end
 
   it 'is invalid with a non-integer rating' do
-    mini = Mini.new(imdb_id: "a")
+    mini = Mini.new(imdb_id: 'a')
+    expect(mini).not_to be_valid
+  end
+
+  it 'is invalid with a non-date' do
+    mini = Mini.new(date_viewed: 'Aces')
     expect(mini).not_to be_valid
   end
 
   it 'is valid' do
-    mini = Mini.new(film_title: 'Musical Goats', imdb_id: 'A659283666', rating: '1')
+    mini = Mini.new(film_title: 'Musical Goats', imdb_id: 'A659283666', rating: '1', date_viewed: '10-10-2015')
     expect(mini).to be_valid
   end
 end

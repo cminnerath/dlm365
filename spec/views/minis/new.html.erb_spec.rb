@@ -5,7 +5,8 @@ RSpec.describe "minis/new", type: :view do
     assign(:mini, Mini.new(
       :film_title => "MyString",
       :imdb_id => "MyString",
-      :rating => 1
+      :rating => 1,
+      :date_viewed => '10-10-2015'
     ))
   end
 

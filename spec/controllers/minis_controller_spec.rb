@@ -24,11 +24,11 @@ RSpec.describe MinisController, type: :controller do
   # Mini. As you add validations to Mini, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { film_title: 'Camp Pirate', imdb_id: 'A659283498', rating: '3.5', }
+    { film_title: 'Camp Pirate', imdb_id: 'A659283498', rating: '3.5', date_viewed: '10-10-2015' }
   }
 
   let(:invalid_attributes) {
-    { film_title: nil, imdb_id: nil, rating: 'Acid', }
+    { film_title: nil, imdb_id: nil, rating: 'Acid', date_viewed: 'a fortnight ago' }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,7 +103,7 @@ RSpec.describe MinisController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        { film_title: 'Musical Goats', imdb_id: 'A659283666', rating: '1', }
+        { film_title: 'Musical Goats', imdb_id: 'A659283666', rating: '1', date_viewed: '10-09-2014' }
       }
 
       it "updates the requested mini" do
