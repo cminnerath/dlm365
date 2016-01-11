@@ -39,6 +39,9 @@ gem 'validates_timeliness', '~> 4.0'
 gem 'jeweler'
 gem 'httparty', '=0.8.2'
 gem 'imdb_party'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'certified'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
