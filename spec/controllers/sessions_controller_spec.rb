@@ -28,7 +28,7 @@ describe SessionsController do
       expect(controller.current_user.id).to eq(user.id)
     end
 
-    it 'redirects to the companies page' do
+    it 'redirects to the root page' do
       request.env["omniauth.auth"] = {
         'provider' => 'google',
         'info' => {'name' => 'Father Ted'},
