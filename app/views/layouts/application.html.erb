@@ -11,13 +11,23 @@
   <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
 
-  <div id="account">
-    <% if current_user %>
-      <%= link_to "Logout", logout_path, method: :delete %>
-    <% else %>
-      <%= link_to "Login", login_path, id: "login" %>
-    <% end %>
-  </div>
+  <!-- Dropdown Trigger for User Controls-->
+  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>User Controls</a>
+
+  <!-- Dropdown Structure for User Controls -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!"><%= link_to "Login", login_path, id: "login" %></a></li>
+    <li><a href="#!">
+        <% if current_user %>
+          <%= link_to "New Minis", new_mini_path %>
+        <% end %></a></li>
+    <li><a href="#!">
+        <% if current_user %>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        <% end %></a></li>
+  </ul>
+  <!-- End User Controls -->
+
 
   <%= yield %>
 
