@@ -34,6 +34,10 @@ describe 'the film creation process', type: :feature do
       expect(page).to have_content('1997-12-19')
       expect(page).to have_content('194 min')
       expect(page).to have_content('http://ia.media-imdb.com/images/M/MV5BMjExNzM0NDM0N15BMl5BanBnXkFtZTcwMzkxOTUwNw@@._V1_.jpg')
+      expect(page).to have_content('A seventeen-year-old aristocrat falls in love with a kind, but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.')
+      expect(page).to have_content('Experience It Like Never Before (3D re-release)')
+      expect(page).to have_content('PG-13')
+      expect(page).to have_content('7.7')
     end
   end
 
