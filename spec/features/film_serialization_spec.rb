@@ -38,7 +38,6 @@ describe 'the film serialization process', type: :feature do
       expect(page).to have_content('Kate Winslet')
       expect(page).to have_content('Rose DeWitt Bukater')
       expect(page).to have_content('Billy Zane')
-      expect(page).to have_content('Caledon 'Cal' Hockley')
       expect(page).to have_content('James Cameron')
     end
   end
