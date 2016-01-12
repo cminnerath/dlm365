@@ -17,6 +17,13 @@ require 'rails_helper'
 # is no simpler way to get a handle on the object needed for the example.
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
+require 'vcr'
+require_relative '../../app/services/imdb_service.rb'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.hook_into :webmock
+end
 
 RSpec.describe MinisController, type: :controller do
 
@@ -24,7 +31,7 @@ RSpec.describe MinisController, type: :controller do
   # Mini. As you add validations to Mini, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { film_title: 'Camp Pirate', imdb_id: 'A659283498', rating: '3.5', date_viewed: '10-10-2015' }
+    { film_title: 'Camp Pirate', imdb_id: 'tt0031381', rating: '3.5', date_viewed: '10-10-2015' }
   }
 
   let(:invalid_attributes) {
@@ -70,20 +77,26 @@ RSpec.describe MinisController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Mini" do
-        expect {
-          post :create, {:mini => valid_attributes}, valid_session
-        }.to change(Mini, :count).by(1)
+        VCR.use_cassette("post_create_with_valid_params", :match_requests_on => [:host]) do
+          expect {
+            post :create, {:mini => valid_attributes}, valid_session
+          }.to change(Mini, :count).by(1)
+        end
       end
 
       it "assigns a newly created mini as @mini" do
-        post :create, {:mini => valid_attributes}, valid_session
-        expect(assigns(:mini)).to be_a(Mini)
-        expect(assigns(:mini)).to be_persisted
+        VCR.use_cassette("post_create_assigns_newly_created_mini", :match_requests_on => [:host]) do
+          post :create, {:mini => valid_attributes}, valid_session
+          expect(assigns(:mini)).to be_a(Mini)
+          expect(assigns(:mini)).to be_persisted
+        end
       end
 
       it "redirects to the created mini" do
-        post :create, {:mini => valid_attributes}, valid_session
-        expect(response).to redirect_to(Mini.last)
+        VCR.use_cassette("post_create_with_redirects_to_created_mini", :match_requests_on => [:host]) do
+          post :create, {:mini => valid_attributes}, valid_session
+          expect(response).to redirect_to(Mini.last)
+        end
       end
     end
 
@@ -103,7 +116,7 @@ RSpec.describe MinisController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        { film_title: 'Musical Goats', imdb_id: 'A659283666', rating: '1', date_viewed: '10-09-2014' }
+        { film_title: 'Musical Goats', imdb_id: 'tt0031381', rating: '1', date_viewed: '10-09-2014' }
       }
 
       it "updates the requested mini" do
@@ -111,7 +124,7 @@ RSpec.describe MinisController, type: :controller do
         put :update, {:id => mini.to_param, :mini => new_attributes}, valid_session
         mini.reload
         expect(mini.film_title).to eq('Musical Goats')
-        expect(mini.imdb_id).to eq('A659283666')
+        expect(mini.imdb_id).to eq('tt0031381')
       end
 
       it "assigns the requested mini as @mini" do
