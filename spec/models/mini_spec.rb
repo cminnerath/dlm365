@@ -22,7 +22,7 @@ RSpec.describe Mini, :type => :model do
   end
 
   it 'is valid' do
-    mini = Mini.new(film_title: 'Musical Goats', imdb_id: 'A659283666', rating: '1', date_viewed: '10-10-2015')
+    mini = Mini.new(film_title: 'Musical Goats', imdb_id: 'tt0031381', rating: '1', date_viewed: '10-10-2015')
     expect(mini).to be_valid
   end
 end
