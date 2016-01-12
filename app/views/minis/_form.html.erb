@@ -1,50 +1,37 @@
 <%= form_for(@mini) do |f| %>
-<% if @mini.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@mini.errors.count, "error") %> prohibited this mini from being saved:</h2>
+  <% if @mini.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mini.errors.count, "error") %> prohibited this mini from being saved:</h2>
 
-  <ul>
-    <% @mini.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+      <ul>
+      <% @mini.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-
-<div class="container">
   <div class="field">
     <%= f.label :film_title %><br>
     <%= f.text_field :film_title %>
   </div>
-</div>
-<div class="row">
-  <div class="col s6 offset-s1">
-    <div class="field">
-      <%= f.label :imdb_id %><br>
-      <%= f.text_field :imdb_id %>
-    </div>
 
+  <div class="field">
+    <%= f.label :imdb_id %><br>
+    <%= f.text_field :imdb_id %>
   </div>
-  <div class="col s4">
-    <div class="field">
-      <%= f.label :rating %><br>
-      <%= f.number_field :rating %>
-    </div>
-  </div>
-</div>
 
-<div class="container">
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %>
+  </div>
+
   <div class="field">
     <%= f.label :date_viewed %><br>
     <%= f.date_field :date_viewed, class: "datepicker"%>
   </div>
-</div>
 
-<div class="center-align">
-  <a class="waves-effect waves-light btn" class"center-align">
-    <%= f.submit %></a>
+  <div class="actions">
+    <%= f.submit %>
   </div>
-</div>
-</body>
 <% end %>
