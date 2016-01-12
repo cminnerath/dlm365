@@ -55,5 +55,37 @@
   <%= @mini_film.rating %>
 </p>
 
+<p>
+  <strong>Director:</strong>
+  <%= @mini_film.directors.first.name %>
+</p>
+
+<p>
+  <strong>First Stooge:</strong>
+  <%= @mini_film.actors.first.name %>
+  <%= @mini_film.actors.first.role %>
+</p>
+
+<p>
+  <strong>Second Stooge:</strong>
+  <%= @mini_film.actors.second.name %>
+  <%= @mini_film.actors.second.role %>
+</p>
+
+<p>
+  <strong>Third Stooge:</strong>
+  <%= @mini_film.actors.third.name %>
+  <%= @mini_film.actors.third.role %>
+</p>
+
+<p>
+  <strong>Genres:</strong>
+  <%= @mini_film.genres.first %>
+  <%= @mini_film.genres.second %>
+  <%= @mini_film.genres.third %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_mini_path(@mini) %> |
 <%= link_to 'Back', minis_path %>
