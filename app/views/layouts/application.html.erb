@@ -11,6 +11,8 @@
   <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
 
+
+  <%= yield %>
   <!-- Dropdown Trigger for User Controls-->
   <a class='dropdown-button btn' href='#' data-activates='dropdown1'>User Controls</a>
 
@@ -27,9 +29,5 @@
         <% end %></a></li>
   </ul>
   <!-- End User Controls -->
-
-
-  <%= yield %>
-
 </body>
 </html>
