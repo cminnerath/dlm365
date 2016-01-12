@@ -42,6 +42,7 @@ gem 'imdb_party'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'certified'
+gem 'sprockets-rails', '2.3.3'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
