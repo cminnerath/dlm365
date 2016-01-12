@@ -35,6 +35,25 @@
   <%= @mini_film.release_date %>
 </p>
 
+<p>
+  <strong>Tagline:</strong>
+  <%= @mini_film.tagline %>
+</p>
+
+<p>
+  <strong>Plot:</strong>
+  <%= @mini_film.plot %>
+</p>
+
+<p>
+  <strong>Certification:</strong>
+  <%= @mini_film.certification %>
+</p>
+
+<p>
+  <strong>IMDB Rating:</strong>
+  <%= @mini_film.rating %>
+</p>
 
 <%= link_to 'Edit', edit_mini_path(@mini) %> |
 <%= link_to 'Back', minis_path %>
