@@ -10,10 +10,12 @@ end
 describe 'the mini view', type: :feature do
 
   before(:each) do
+    VCR.use_cassette("film_titles", :match_requests_on => [:host], :record => :new_episodes) do
     mock_auth
     visit login_path
     visit new_mini_path
     create_mini
+  end
   end
 
   it 'shows film titles' do
@@ -24,7 +26,7 @@ describe 'the mini view', type: :feature do
   it 'shows view date' do
     expect(page).to have_content('Date Viewed')
     expect(page).to have_content('10-10-2015')
-  end
+end
 
 
   it 'shows imdb id' do

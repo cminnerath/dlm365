@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= image_tag(@mini_film.poster(:thumb)) %>
 <p>
   <strong>Film Title:</strong>
   <%= @mini_film.title %>
@@ -84,6 +84,8 @@
   <%= @mini_film.genres.second %>
   <%= @mini_film.genres.third %>
 </p>
+
+
 
 
 
