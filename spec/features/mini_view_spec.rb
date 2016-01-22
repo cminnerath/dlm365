@@ -10,6 +10,9 @@ end
 describe 'the mini view', type: :feature do
 
   before(:each) do
+    mock_auth
+    visit login_path
+    visit new_mini_path
     create_mini
   end
 

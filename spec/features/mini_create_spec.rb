@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'vcr'
-require_relative '../../app/services/imdb_service.rb'
+require 'spec_helper'
 
 VCR.configure do |config|
   config.cassette_library_dir = "fixtures/vcr_cassettes"
@@ -9,12 +9,11 @@ end
 
 describe 'the mini creation process', type: :feature do
 
-  before(:each) do
-    visit new_mini_path
-  end
-
   it 'creates a mini' do
     VCR.use_cassette("mini_creation_feature", :match_requests_on => [:host]) do
+      mock_auth
+      visit login_path
+      visit new_mini_path
 
       expect(page).to have_content('New Mini')
 
