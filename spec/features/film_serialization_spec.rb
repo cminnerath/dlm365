@@ -10,6 +10,8 @@ end
 describe 'the film serialization process', type: :feature do
 
   before(:each) do
+    mock_auth
+    visit login_path
     visit new_mini_path
   end
 

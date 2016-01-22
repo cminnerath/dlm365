@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Mini, :type => :model do
+
+  it { should belong_to :user }
+
   it 'is invalid without a film title' do
     mini = Mini.new(film_title: nil)
     expect(mini).not_to be_valid
@@ -22,7 +25,13 @@ RSpec.describe Mini, :type => :model do
   end
 
   it 'is valid' do
-    mini = Mini.new(film_title: 'Musical Goats', imdb_id: 'tt0031381', rating: '1', date_viewed: '10-10-2015')
+    mini = Mini.new(film_title: 'Musical Goats', imdb_id: 'tt0031381', rating: '1', date_viewed: '10-10-2015', user_id: 1)
     expect(mini).to be_valid
   end
+
+  it 'is invalid without user' do
+    mini = Mini.new(film_title: 'Musical Goats', imdb_id: 'tt0031381', rating: '1', date_viewed: '10-10-2015')
+    expect(mini).not_to be_valid
+  end
+
 end

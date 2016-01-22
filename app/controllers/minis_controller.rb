@@ -1,5 +1,6 @@
 class MinisController < ApplicationController
   before_action :set_mini, only: [:show, :edit, :update, :destroy]
+  before_action :current_user, only: [:create, :edit, :update, :destroy]
 
   def index
     @minis = Mini.all
@@ -17,7 +18,7 @@ class MinisController < ApplicationController
   end
 
   def create
-    @mini = Mini.new(mini_params)
+    @mini = current_user.minis.build(mini_params)
 
     respond_to do |format|
       if @mini.save
@@ -57,7 +58,7 @@ class MinisController < ApplicationController
     end
 
     def mini_params
-      params.require(:mini).permit(:film_title, :imdb_id, :rating, :date_viewed)
+      params.require(:mini).permit(:film_title, :imdb_id, :rating, :date_viewed, :user_id)
     end
 
 end

@@ -43,6 +43,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'certified'
 gem 'sprockets-rails', '2.3.3'
+gem 'paperclip'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
@@ -52,12 +53,12 @@ group :development, :test do
   gem 'pry-rails'
   gem 'selenium-webdriver'
   gem 'quiet_assets'
+  gem 'shoulda'
+  gem 'rack_session_access'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 

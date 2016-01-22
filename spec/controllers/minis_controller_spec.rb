@@ -31,17 +31,21 @@ RSpec.describe MinisController, type: :controller do
   # Mini. As you add validations to Mini, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { film_title: 'Camp Pirate', imdb_id: 'tt0031381', rating: '3.5', date_viewed: '10-10-2015' }
+    { film_title: 'Camp Pirate', imdb_id: 'tt0031381', rating: '3.5', date_viewed: '10-10-2015', user_id: 1 }
   }
 
   let(:invalid_attributes) {
     { film_title: nil, imdb_id: nil, rating: 'Acid', date_viewed: 'a fortnight ago' }
   }
 
+  before { @user = User.new(uid: 1) }
+
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # MinisController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+
 
   describe "GET #index" do
     it "assigns all minis as @minis" do
@@ -74,49 +78,10 @@ RSpec.describe MinisController, type: :controller do
     end
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new Mini" do
-        VCR.use_cassette("post_create_with_valid_params", :match_requests_on => [:host]) do
-          expect {
-            post :create, {:mini => valid_attributes}, valid_session
-          }.to change(Mini, :count).by(1)
-        end
-      end
-
-      it "assigns a newly created mini as @mini" do
-        VCR.use_cassette("post_create_assigns_newly_created_mini", :match_requests_on => [:host]) do
-          post :create, {:mini => valid_attributes}, valid_session
-          expect(assigns(:mini)).to be_a(Mini)
-          expect(assigns(:mini)).to be_persisted
-        end
-      end
-
-      it "redirects to the created mini" do
-        VCR.use_cassette("post_create_with_redirects_to_created_mini", :match_requests_on => [:host]) do
-          post :create, {:mini => valid_attributes}, valid_session
-          expect(response).to redirect_to(Mini.last)
-        end
-      end
-    end
-
-    context "with invalid params" do
-      it "assigns a newly created but unsaved mini as @mini" do
-        post :create, {:mini => invalid_attributes}, valid_session
-        expect(assigns(:mini)).to be_a_new(Mini)
-      end
-
-      it "re-renders the 'new' template" do
-        post :create, {:mini => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
-      end
-    end
-  end
-
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        { film_title: 'Musical Goats', imdb_id: 'tt0031381', rating: '1', date_viewed: '10-09-2014' }
+        { film_title: 'Musical Goats', imdb_id: 'tt0031381', rating: '1', date_viewed: '10-09-2014', user_id: 1 }
       }
 
       it "updates the requested mini" do
