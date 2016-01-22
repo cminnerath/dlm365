@@ -44,7 +44,7 @@ gem 'omniauth-google-oauth2'
 gem 'certified'
 gem 'sprockets-rails', '2.3.3'
 gem 'paperclip'
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '< 2.0'
 gem 'mini_magick'
 
 group :development, :test do
