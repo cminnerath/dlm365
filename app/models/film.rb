@@ -1,7 +1,12 @@
 require 'open-uri'
 
 class Film < ActiveRecord::Base
-  has_attached_file :poster, styles: {
+  has_attached_file :poster,
+                    :url => "/system/:rails_env/:attachment/:style/:hash.:extension",
+                    :path => "public/system/:rails_env/:attachment/:style/:hash.:extension",
+                    :hash_data => ":class/:attachment/:id",
+                    :hash_secret => "testing",
+                    :styles => {
     thumb: '317x214>',
     medium: '300x300>'
   }

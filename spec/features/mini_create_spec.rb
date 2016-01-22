@@ -36,6 +36,7 @@ describe 'the mini creation process', type: :feature do
       expect(page).to have_content('Date Viewed')
       expect(page).to have_content('IMDB ID')
       expect(page).to have_content('Rating')
+      save_and_open_page
     end
   end
 end
