@@ -16,7 +16,7 @@ describe 'the film creation process', type: :feature do
   end
 
   it 'creates a new film when a mini is created' do
-    VCR.use_cassette("film_creation_feature", :match_requests_on => [:host]) do
+    VCR.use_cassette("film_creation_feature", :match_requests_on => [:host], record: :new_episodes) do
 
       expect(page).to have_content('Film title')
       page.fill_in 'Film title', :with => 'Titanic'

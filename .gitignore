@@ -19,3 +19,4 @@
 # Ignore OmniAuth Initializer
 /initializers/omniauth.rb
 /fixtures
+/assets/images
