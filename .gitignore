@@ -20,3 +20,6 @@
 /initializers/omniauth.rb
 /fixtures
 /assets/images
+
+# Ignore application configuration
+/config/application.yml

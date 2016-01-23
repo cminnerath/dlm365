@@ -46,6 +46,7 @@ gem 'sprockets-rails', '2.3.3'
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'mini_magick'
+gem 'figaro'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'

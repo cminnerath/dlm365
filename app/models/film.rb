@@ -2,13 +2,8 @@ require 'open-uri'
 
 class Film < ActiveRecord::Base
   has_attached_file :poster,
-                    :url => "/system/:rails_env/:attachment/:style/:hash.:extension",
-                    :path => "public/system/:rails_env/:attachment/:style/:hash.:extension",
-                    :hash_data => ":class/:attachment/:id",
-                    :hash_secret => "testing",
                     :styles => {
-    thumb: '317x214>',
-    medium: '300x300>'
+    thumb: '317x214>'
   }
   validates_attachment_content_type :poster, :content_type => /\Aimage\/.*\Z/
   validates_attachment_size :poster, :in => 0.megabytes..2.megabytes
@@ -36,7 +31,7 @@ class Film < ActiveRecord::Base
     film.directors      = data.directors
     film.writers        = data.writers
     film.genres         = data.genres
-    film.poster         = URI.parse( ('http://anonymouse.org/cgi-bin/anon-www.cgi/' + data.poster_url) )
+    film.poster         = URI.parse( (data.poster_url) )
     film.save
     film
   end
