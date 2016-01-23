@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://anonymouse.org/cgi-bin/anon-www.cgi/https://app.imdb.com/title/maindetails?api=v1&apiKey=2wex6aeu6a8q9e49k7sfvufd6rhh0n&apiPolicy=app1_1&appid=iphone1_1&locale=en_US&sig=app1-b2535f8d8a50535e9a10f226b06cbd4ff5d08032&tconst=tt0120338&timestamp=1453501164
+    uri: http://app.imdb.com/title/maindetails?api=v1&apiKey=2wex6aeu6a8q9e49k7sfvufd6rhh0n&apiPolicy=app1_1&appid=iphone1_1&locale=en_US&sig=app1-fa820c2d6ed939eb8912b1c548516e8e4ab473b9&tconst=tt0120338&timestamp=1453511771
     body:
       encoding: US-ASCII
       string: ''
@@ -13,39 +13,33 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 22 Jan 2016 22:19:23 GMT
+      - Sat, 23 Jan 2016 01:16:16 GMT
       Server:
-      - Apache/2.2.10 (Fedora)
+      - HTTPDaemon
       X-Frame-Options:
       - SAMEORIGIN
+      Cache-Control:
+      - private
       Expires:
-      - Fri, 22 Jan 2016 23:19:25 GMT
-      Vary:
-      - Accept-Encoding,User-Agent
-      X-Cache:
-      - MISS from Anonymouse.org
-      X-Cache-Lookup:
-      - MISS from Anonymouse.org:3128
-      Proxy-Connection:
-      - close
-      Set-Cookie:
-      - session-id-time=1611181165;path=/;domain=.imdb.com;expires=Wed, 20 Jan 2021
-        14:19:25 GMT
-      - session-id=847-3501165-8520406;path=/;domain=.imdb.com;expires=Wed, 20 Jan
-        2021 14:19:25 GMT
-      - uu=BCYnvYhMEMaux5L4aolm9XIdRhtpLlXHZwVEDapgAZYI5B6_GGkdw6NCYfxcZ2QQuJTI4vF-4pmc7JJt52TdbOqqqiwT25sh9X1JXVF0J6otSOcShMYRpVjQDVwUTeqMSEAFvxHCYWUdZ_6LaA_R8Vx3_qtaytgvC1mD9GnWDS901-Y;expires=Thu,
-        30 Dec 2037 00:00:00 GMT;path=/;domain=.imdb.com
-      Connection:
-      - close
-      Transfer-Encoding:
-      - chunked
+      - Sat, 23 Jan 2016 02:16:16 GMT
       Content-Type:
       - application/json
+      Set-Cookie:
+      - session-id-time=1611191776;path=/;domain=.imdb.com;expires=Wed, 20 Jan 2021
+        17:16:16 GMT
+      - session-id=152-3511776-8608969;path=/;domain=.imdb.com;expires=Wed, 20 Jan
+        2021 17:16:16 GMT
+      - uu=BCYq36tH638eCxFdj2LHLPDFB6MOQClgfv9k5EDHDJ2uPhHE0XevuhPf0ugQ193kwlfoCV6SB9ekZMWQalz3yrBBsTK_RwktBmARuLF3J8dGVCb-VyPOiv5ENyYURq6eRhUVY3DqFfKBVch4bMW6YuC6VwZta-B1ShQ_NTZwCc9LlnE;expires=Thu,
+        30 Dec 2037 00:00:00 GMT;path=/;domain=.imdb.com
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJleHAiOjE0NTM1MDQ3NjUsIkBtZXRhIjp7InNlcnZlclRpbWVNcyI6NDEs
-        InJlcXVlc3RJZCI6IjFBUVZIMTAzRUpRUVFWTktLRzM2In0sImRhdGEiOnsi
+        eyJleHAiOjE0NTM1MTUzNzYsIkBtZXRhIjp7InNlcnZlclRpbWVNcyI6NDIs
+        InJlcXVlc3RJZCI6IjA2UzJNM0owRzBHVDZUMDlLNkRaIn0sImRhdGEiOnsi
         cGhvdG9zIjpbeyJsaW5rIjoiaHR0cDovL3d3dy5pbWRiLmNvbS9yZy9hcHBw
         aG90by9saW5rL21lZGlhL3JtMjUzNDIwMzM5Mi90dDAxMjAzMzgiLCJpbWFn
         ZSI6eyJ3aWR0aCI6MTMxMSwidXJsIjoiaHR0cDovL2lhLm1lZGlhLWltZGIu
@@ -164,7 +158,7 @@ http_interactions:
         YS5tZWRpYS1pbWRiLmNvbS9pbWFnZXMvTS9NVjVCTWpJME1qTXpPVGcyTUY1
         Qk1sNUJhbkJuWGtGdFpUY3dNVE0zTmpReE13QEAuX1YxXy5qcGciLCJoZWln
         aHQiOjQwMH19LCJhdHRyIjoiKHdyaXR0ZW4gYnkpIn1dLCJyYXRpbmciOjcu
-        NywibnVtX3ZvdGVzIjo3NTAwNjcsInRjb25zdCI6InR0MDEyMDMzOCIsImdl
+        NywibnVtX3ZvdGVzIjo3NTAxMjYsInRjb25zdCI6InR0MDEyMDMzOCIsImdl
         bnJlcyI6WyJEcmFtYSIsIlJvbWFuY2UiXSwiYmVzdF9wbG90Ijp7Im91dGxp
         bmUiOiJBIHNldmVudGVlbi15ZWFyLW9sZCBhcmlzdG9jcmF0IGZhbGxzIGlu
         IGxvdmUgd2l0aCBhIGtpbmQsIGJ1dCBwb29yIGFydGlzdCBhYm9hcmQgdGhl
@@ -316,10 +310,10 @@ http_interactions:
         bGllbnRzIGFjY2VwdCBmdWxsIGxlZ2FsIGV4cG9zdXJlL2xpYWJpbGl0eSBm
         b3IgdGhlaXIgYWN0aW9ucy4ifQ==
     http_version: 
-  recorded_at: Fri, 22 Jan 2016 22:19:26 GMT
+  recorded_at: Sat, 23 Jan 2016 01:16:16 GMT
 - request:
     method: get
-    uri: http://anonymouse.org/cgi-bin/anon-www.cgi/http://ia.media-imdb.com/images/M/MV5BMjExNzM0NDM0N15BMl5BanBnXkFtZTcwMzkxOTUwNw@@._V1_.jpg
+    uri: http://ia.media-imdb.com/images/M/MV5BMjExNzM0NDM0N15BMl5BanBnXkFtZTcwMzkxOTUwNw@@._V1_.jpg
     body:
       encoding: US-ASCII
       string: ''
@@ -335,30 +329,24 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 22 Jan 2016 22:19:24 GMT
       Server:
-      - Apache/2.2.10 (Fedora)
-      Access-Control-Allow-Origin:
-      - "*"
-      Expires:
-      - Wed, 09 Jan 2036 02:33:52 GMT
-      Age:
-      - '18'
-      X-Cache:
-      - HIT from Anonymouse.org
-      X-Cache-Lookup:
-      - HIT from Anonymouse.org:3128
-      Proxy-Connection:
-      - close
+      - nginx
+      Content-Type:
+      - image/jpeg
       Content-Length:
       - '1810732'
       Last-Modified:
       - Wed, 16 Nov 2011 21:43:05 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=630700109
+      Expires:
+      - Thu, 17 Jan 2036 19:44:47 GMT
+      Date:
+      - Sat, 23 Jan 2016 01:16:18 GMT
       Connection:
-      - close
-      Content-Type:
-      - image/jpeg
+      - keep-alive
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -40602,5 +40590,5 @@ http_interactions:
         B8VOoWiSY/TzwsAVWNx6l1smMi27jfEsaLUGrY1YIUG78V70JrUDuH9p1bYM
         hDEFl3IQs7UTsddgWF+Ca96WFj//2Q==
     http_version: 
-  recorded_at: Fri, 22 Jan 2016 22:19:28 GMT
+  recorded_at: Sat, 23 Jan 2016 01:16:20 GMT
 recorded_with: VCR 3.0.1
