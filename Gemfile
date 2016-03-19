@@ -46,6 +46,8 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'mini_magick'
 gem 'figaro'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'devise'
 
 group :development, :test do
   gem 'responders'
