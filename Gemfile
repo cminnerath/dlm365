@@ -34,7 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'materialize-sass'
-gem 'rails_12factor'
 gem 'validates_timeliness', '~> 4.0'
 gem 'jeweler'
 gem 'httparty', '=0.8.2'
@@ -49,6 +48,7 @@ gem 'mini_magick'
 gem 'figaro'
 
 group :development, :test do
+  gem 'responders'
   gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner'
   gem 'capybara'
@@ -68,4 +68,8 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
