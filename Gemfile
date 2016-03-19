@@ -48,6 +48,7 @@ gem 'mini_magick'
 gem 'figaro'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'devise'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'responders'
