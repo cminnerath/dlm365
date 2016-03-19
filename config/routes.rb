@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/login"  => redirect("/auth/google_oauth2"), as: :login, via: [:get, :post]
   delete "logout" => "sessions#destroy", as: :logout
   get "logout" => "sessions#destroy"
+  devise_for :mobile_users, :controllers => {sessions: 'mobile_user/sessions', registrations: 'mobile_user/registrations', passwords: 'mobile_user/passwords' }
 end
