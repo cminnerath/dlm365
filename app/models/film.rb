@@ -2,7 +2,7 @@ require 'open-uri'
 
 class Film < ActiveRecord::Base
   has_attached_file :poster,
-                    :styles => {
+  :styles => {
     thumb: '317x214>'
   }
   validates_attachment_content_type :poster, :content_type => /\Aimage\/.*\Z/
@@ -33,6 +33,26 @@ class Film < ActiveRecord::Base
     film.genres         = data.genres
     film.poster         = URI.parse( (data.poster_url) )
     film.save
+    film
+  end
+
+  def self.find_imdb_hash(mini)
+    data = ImdbService.grab(mini.imdb_id)
+    film = {    :title          => data.title,
+                :imdb_id        => data.imdb_id,
+                :release_date           => data.release_date,
+                :runtime        => data.runtime,
+                :poster_url     => data.poster_url,
+                :tagline        => data.tagline,
+                :plot           => data.plot,
+                :certification  => data.certification,
+                :rating         => data.rating,
+                :actors         => data.actors,
+                :directors      => data.directors,
+                :writers        => data.writers,
+                :genres         => data.genres,
+                :poster         => URI.parse( (data.poster_url) )
+          }
     film
   end
 
