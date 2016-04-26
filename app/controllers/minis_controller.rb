@@ -8,6 +8,10 @@ class MinisController < ApplicationController
 
   def show
     @mini_film = Film.find_by(imdb_id: @mini.imdb_id)
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render :json => @mini.to_json(:include => :film) }
+    end
   end
 
   def new
