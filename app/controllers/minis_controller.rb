@@ -22,7 +22,8 @@ class MinisController < ApplicationController
 
     respond_to do |format|
       if @mini.save
-        Film.find_or_create_from_imdb_party(@mini)
+        @film = Film.find_imdb_hash(@mini)
+        @mini.create_film(@film)
         format.html { redirect_to @mini, notice: 'Mini was successfully created.' }
         format.json { render :show, status: :created, location: @mini }
       else
@@ -53,12 +54,12 @@ class MinisController < ApplicationController
   end
 
   private
-    def set_mini
-      @mini = Mini.find(params[:id])
-    end
 
-    def mini_params
-      params.require(:mini).permit(:film_title, :imdb_id, :rating, :date_viewed, :user_id)
-    end
+  def set_mini
+    @mini = Mini.find(params[:id])
+  end
 
+  def mini_params
+    params.require(:mini).permit(:film_title, :imdb_id, :rating, :date_viewed, :user_id, :film_id)
+  end
 end

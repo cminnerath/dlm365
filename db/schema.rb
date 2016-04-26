@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407031638) do
+ActiveRecord::Schema.define(version: 20160407033515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,10 @@ ActiveRecord::Schema.define(version: 20160407031638) do
     t.string   "poster_content_type"
     t.integer  "poster_file_size"
     t.datetime "poster_updated_at"
+    t.integer  "mini_id"
   end
+
+  add_index "films", ["mini_id"], name: "index_films_on_mini_id", using: :btree
 
   create_table "films_minis", id: false, force: :cascade do |t|
     t.integer "mini_id", null: false
@@ -85,4 +88,5 @@ ActiveRecord::Schema.define(version: 20160407031638) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "films", "minis"
 end

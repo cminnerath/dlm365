@@ -4,6 +4,7 @@ class Mini < ActiveRecord::Base
   validates :rating, numericality: true
   validates :user_id, presence: true
   validates :date_viewed, :timeliness => {:type => :date}
-  belongs_to :film
+  has_one :film
   belongs_to :user
 end
+ 
