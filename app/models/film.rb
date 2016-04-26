@@ -15,32 +15,11 @@ class Film < ActiveRecord::Base
   serialize :writers
   serialize :genres
 
-
-  def self.find_or_create_from_imdb_party(mini)
-    data = ImdbService.grab(mini.imdb_id)
-    film = Film.find_or_create_by(imdb_id: mini.imdb_id)
-    film.title          = data.title
-    film.release_date   = data.release_date
-    film.runtime        = data.runtime
-    film.poster_url     = data.poster_url
-    film.tagline        = data.tagline
-    film.plot           = data.plot
-    film.certification  = data.certification
-    film.rating         = data.rating
-    film.actors         = data.actors
-    film.directors      = data.directors
-    film.writers        = data.writers
-    film.genres         = data.genres
-    film.poster         = URI.parse( (data.poster_url) )
-    film.save
-    film
-  end
-
   def self.find_imdb_hash(mini)
     data = ImdbService.grab(mini.imdb_id)
     film = {    :title          => data.title,
                 :imdb_id        => data.imdb_id,
-                :release_date           => data.release_date,
+                :release_date   => data.release_date,
                 :runtime        => data.runtime,
                 :poster_url     => data.poster_url,
                 :tagline        => data.tagline,
@@ -55,5 +34,4 @@ class Film < ActiveRecord::Base
           }
     film
   end
-
 end

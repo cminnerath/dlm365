@@ -26,3 +26,7 @@
 
 # Ignore film posters from development
 /public/system/films/posters/
+
+# Ignore Coverage files
+/coverage
+coverage

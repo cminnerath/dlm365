@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'capybara/rails'
 require 'capybara/rspec'
-
+# :nocov:
 class FakeSessionsController < ApplicationController
   def create
     session[:user_id] = params[:user_id]
@@ -46,3 +46,4 @@ describe 'the application', type: :feature do
     # end
   end
 end
+# :nocov:
